@@ -6,6 +6,7 @@ import 'package:quiz/utils/quiz.dart';
 import 'package:quiz/UI/question_text.dart';
 import '../UI/answer_button.dart';
 import '../UI/correctOrWrong_overlay.dart';
+import './score_page.dart';
 
 class QuizPage extends StatefulWidget {
   @override
@@ -24,7 +25,6 @@ class QuizPageState extends State<QuizPage> {
   int questionNumber;
   bool isCorrect;
   bool visibleOverlay = false; // at app start, the overlay will not be show
-  // bool endOfQuiz = false;
 
   @override
   void initState() {
@@ -44,10 +44,15 @@ class QuizPageState extends State<QuizPage> {
   }
 
   void onOverlayPress() {
+    if(quiz.length == questionNumber) {
+      // Navigator.of(context).push(
+      //   MaterialPageRoute(builder: (context) => ScorePage(quiz.score, quiz.length))
+      // );
+      Navigator.of(context).pushNamed('score_page', arguments: ScorePage(quiz.score, quiz.length));
+      return; // To stop end the quiz at the score page and not run setState method
+    }
+
     currentQuestion = quiz.nextQuestion;  // queue up the next question
-    // if(currentQuestion.question == null) {  // if user reached the last question
-    //   endOfQuiz = true;
-    // }
 
     setState(() {
       visibleOverlay = false; // remove the overlay after user answer

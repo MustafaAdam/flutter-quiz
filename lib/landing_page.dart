@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import './pages/quiz_page.dart';
 
 class LandingPage extends StatelessWidget {
   @override
@@ -8,10 +7,7 @@ class LandingPage extends StatelessWidget {
       color: Colors.blueAccent,
       child: InkWell(
         onTap: () {
-          Navigator.of(context).push(
-            // context,
-            MaterialPageRoute(builder: (context) => QuizPage())
-          );
+          Navigator.of(context).pushNamed('quiz_page');
         },
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
