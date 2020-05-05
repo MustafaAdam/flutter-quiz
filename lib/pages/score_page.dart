@@ -16,7 +16,7 @@ class ScorePage extends StatelessWidget {
         children: <Widget>[
           Text("Your score: ", style: TextStyle(color: Colors.white, fontWeight: FontWeight.bold, fontSize: 40, fontStyle: FontStyle.italic)),
           Text("$score / $totalQuestions",style: TextStyle(color: Colors.white, fontWeight: FontWeight.bold, fontSize: 40, fontStyle: FontStyle.italic)),
-          WillPopScope(
+          WillPopScope(  // to prevent the android back button from allowing user to go back to last question
             onWillPop: () async => false,
             child: IconButton(
               icon: Icon(Icons.arrow_right),

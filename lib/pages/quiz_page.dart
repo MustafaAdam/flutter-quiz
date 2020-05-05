@@ -45,9 +45,6 @@ class QuizPageState extends State<QuizPage> {
 
   void onOverlayPress() {
     if(quiz.length == questionNumber) {
-      // Navigator.of(context).push(
-      //   MaterialPageRoute(builder: (context) => ScorePage(quiz.score, quiz.length))
-      // );
       Navigator.of(context).pushNamed('score_page', arguments: ScorePage(quiz.score, quiz.length));
       return; // To stop end the quiz at the score page and not run setState method
     }
