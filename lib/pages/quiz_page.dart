@@ -16,9 +16,19 @@ class QuizPage extends StatefulWidget {
 class QuizPageState extends State<QuizPage> {
   Question currentQuestion;
   Quiz quiz = Quiz([
-    Question(question: "Elon Musk is Human?", answer: false),
-    Question(question: "Metal Gear is a bad game?", answer: false),
-    Question(question: "Stargate Universe was great?", answer: true),
+    Question(question: "Adel is a gangsta", answer: true),
+    Question(question: "ADNOC is a good company", answer: false),
+    Question(question: "Real men drive a corolla", answer: true),
+    Question(question: "Barcelona is better than Real Madrid", answer: true),
+    Question(question: "Christiano Ronaldo is overrated", answer: true),
+    Question(question: "Diyar call center agent have good salaries", answer: false),
+    Question(question: "ADNOC call center agents deserve an ass whipping", answer: true),
+    Question(question: "The Expanse is one of the best TV series of all time", answer: true),
+    Question(question: "Metal Gear is the best video game", answer: true),
+    Question(question: "Ahmed has huge biceps", answer: true),
+    Question(question: "Mahmood needs to lose weight", answer: false),
+    Question(question: "Mustafa is fat", answer: true),
+    Question(question: "Adel can do one-arm pull ups", answer: true),
   ]);
 
   String questionText;
